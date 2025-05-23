@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Harga Jual Online 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-in': 'bounceIn 0.8s ease-out',
+                        'pulse-glow': 'pulseGlow 2s infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        bounceIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.3)' },
+                            '50%': { opacity: '1', transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4 font-sans">
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-20"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto">
+        <!-- Header -->
+        <!-- <div class="text-center mb-8 animate-slide-up">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-6 shadow-2xl animate-bounce-in">
+                <i class="fas fa-calculator text-3xl text-white"></i>
+            </div>
+            <h1 class="text-5xl font-black text-white mb-3 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                Kalkulator Harga Jual 2025
+            </h1>
+            <p class="text-xl text-indigo-200 font-medium">
+                <i class="fas fa-chart-line mr-2"></i>
+                Berdasarkan tarif terbaru e-commerce Indonesia
+            </p>
+        </div> -->
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Input Form -->
+            <div class="lg:col-span-2">
+                <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 animate-fade-in">
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-edit text-blue-600 mr-3"></i>
+                            Input Data Produk
+                        </h2>
+                        <div class="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Harga Modal -->
+                        <div class="group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-coins text-yellow-500 mr-2"></i>
+                                Harga Modal Produk
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">Rp</span>
+                                <input type="number" id="modalPrice" 
+                                       class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                       placeholder="100000" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Platform -->
+                        <div class="group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-store text-green-500 mr-2"></i>
+                                Platform Penjualan
+                            </label>
+                            <select id="platform" 
+                                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-lg font-medium transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300">
+                                <option value="">🎯 Pilih Platform</option>
+                                <optgroup label="🛒 Shopee (Update 2025)">
+                                    <option value="shopee_a">Kategori A - 8% (Fashion, Elektronik, Otomotif)</option>
+                                    <option value="shopee_b">Kategori B - 7.5%</option>
+                                    <option value="shopee_c">Kategori C - 5.75%</option>
+                                    <option value="shopee_d">Kategori D - 4.25% (Perlengkapan Rumah)</option>
+                                </optgroup>
+                                <optgroup label="🟢 Tokopedia (Update 2025)">
+                                    <option value="tokopedia_elektronik">Elektronik - 8% (efektif)</option>
+                                    <option value="tokopedia_fashion">Fashion/FMCG/Gaya Hidup - 8% (efektif)</option>
+                                    <option value="tokopedia_lain">Kategori Lain - 8% (efektif)</option>
+                                </optgroup>
+                                <optgroup label="🔵 Lazada (Update 2025)">
+                                    <option value="lazada_marketplace">Marketplace - ~6% (4.25-8% + handling)</option>
+                                    <option value="lazada_lazmall">LazMall - ~7.5% (4.32-10.32% + handling)</option>
+                                </optgroup>
+                                <optgroup label="⚫ TikTok Shop (Update 2025)">
+                                    <option value="tiktokshop_low">Kategori Rendah - 2% + Rp2.000</option>
+                                    <option value="tiktokshop_high">Kategori Tinggi - 6.5% + Rp2.000</option>
+                                </optgroup>
+                                <optgroup label="📱 Lainnya">
+                                    <option value="instagram">Instagram/WhatsApp - 0%</option>
+                                    <option value="custom">Custom Fee</option>
+                                </optgroup>
+                            </select>
+                            <div id="platformInfo" class="mt-2 text-sm text-gray-600 italic flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mr-2 mt-0.5"></i>
+                                <span id="platformInfoText"></span>
+                            </div>
+                        </div>
+
+                        <!-- Custom Fee Groups -->
+                        <div id="customFeeGroup" class="hidden space-y-4">
+                            <div class="group">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                    <i class="fas fa-percent text-purple-500 mr-2"></i>
+                                    Fee Platform Custom (%)
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="customFee" 
+                                           class="w-full px-4 py-4 pr-12 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                           placeholder="5.0" min="0" max="100" step="0.1">
+                                    <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="customFixedGroup" class="hidden group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-hand-holding-usd text-purple-500 mr-2"></i>
+                                Biaya Tetap Custom
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">Rp</span>
+                                <input type="number" id="customFixed" 
+                                       class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                       placeholder="1000" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Affiliate Fee -->
+                        <div class="group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-users text-orange-500 mr-2"></i>
+                                Biaya Affiliate/Komisi (%)
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="affiliateFee" 
+                                       class="w-full px-4 py-4 pr-12 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                       placeholder="5.0" min="0" max="100" step="0.1">
+                                <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">%</span>
+                            </div>
+                        </div>
+
+                        <!-- Optional Fee -->
+                        <div class="group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-plus-circle text-red-500 mr-2"></i>
+                                Biaya Opsional/Tambahan (%)
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="optionalFee" 
+                                       class="w-full px-4 py-4 pr-12 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                       placeholder="2.0" min="0" max="100" step="0.1">
+                                <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">%</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-500 flex items-center">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                                Contoh: Iklan, promosi, cashback, atau biaya lainnya
+                            </p>
+                        </div>
+
+                        <!-- Profit Margin -->
+                        <div class="group">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                                <i class="fas fa-chart-bar text-green-600 mr-2"></i>
+                                Margin Keuntungan (%)
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="profitMargin" 
+                                       class="w-full px-4 py-4 pr-12 border-2 border-gray-200 rounded-xl text-lg font-medium placeholder-gray-400 transition-all duration-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none bg-gray-50 hover:bg-white group-hover:border-gray-300"
+                                       placeholder="20" min="0" max="1000" step="0.1">
+                                <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold">%</span>
+                            </div>
+                        </div>
+
+                        <!-- Calculate Button -->
+                        <button onclick="calculate()" 
+                                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-5 px-8 rounded-2xl text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 animate-pulse-glow">
+                            <i class="fas fa-calculator mr-3"></i>
+                            Hitung Harga Jual Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="lg:col-span-1">
+                <div id="results" class="bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 sticky top-8 hidden animate-bounce-in">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-receipt text-green-600 mr-3"></i>
+                            Hasil Perhitungan
+                        </h3>
+                        <div class="h-1 w-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-yellow-50 rounded-xl border-l-4 border-yellow-400">
+                            <span class="text-gray-700 font-medium flex items-center">
+                                <i class="fas fa-coins text-yellow-500 mr-2"></i>
+                                Harga Modal
+                            </span>
+                            <span class="font-bold text-gray-800" id="resultModal">Rp 0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400">
+                            <span class="text-gray-700 font-medium flex items-center">
+                                <i class="fas fa-store text-blue-500 mr-2"></i>
+                                Fee Platform
+                            </span>
+                            <span class="font-bold text-gray-800" id="resultFee">Rp 0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-4 bg-orange-50 rounded-xl border-l-4 border-orange-400">
+                            <span class="text-gray-700 font-medium flex items-center">
+                                <i class="fas fa-users text-orange-500 mr-2"></i>
+                                Biaya Affiliate
+                            </span>
+                            <span class="font-bold text-gray-800" id="resultAffiliate">Rp 0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                            <span class="text-gray-700 font-medium flex items-center">
+                                <i class="fas fa-plus-circle text-red-500 mr-2"></i>
+                                Biaya Opsional
+                            </span>
+                            <span class="font-bold text-gray-800" id="resultOptional">Rp 0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                            <span class="text-gray-700 font-medium flex items-center">
+                                <i class="fas fa-chart-bar text-green-500 mr-2"></i>
+                                Target Keuntungan
+                            </span>
+                            <span class="font-bold text-gray-800" id="resultProfit">Rp 0</span>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-green-500 to-blue-600 p-6 rounded-2xl text-white mt-6 shadow-xl">
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold flex items-center">
+                                    <i class="fas fa-money-bill-wave mr-3 text-2xl"></i>
+                                    HARGA JUAL FINAL
+                                </span>
+                                <span class="text-2xl font-black" id="resultFinal">Rp 0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="mt-6 p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+                        <h4 class="font-semibold text-indigo-800 mb-2 flex items-center">
+                            <i class="fas fa-lightbulb text-indigo-600 mr-2"></i>
+                            Tips Pricing
+                        </h4>
+                        <ul class="text-sm text-indigo-700 space-y-1">
+                            <li>• Selalu update fee platform terbaru</li>
+                            <li>• Perhitungkan biaya promosi tambahan</li>
+                            <li>• Sesuaikan margin dengan kompetitor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-12 text-indigo-200">
+            <p class="flex items-center justify-center">
+                <i class="fas fa-heart text-red-400 mr-2"></i>
+                Dibuat untuk membantu seller Indonesia sukses
+                <i class="fas fa-rocket text-yellow-400 ml-2"></i>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const platformData = {
+            shopee_a: { 
+                percentage: 8.0, 
+                fixed: 0, 
+                info: "Shopee Kategori A: 8% (Fashion, Elektronik, Kebutuhan sehari-hari, Aksesoris HP, Otomotif)" 
+            },
+            shopee_b: { 
+                percentage: 7.5, 
+                fixed: 0, 
+                info: "Shopee Kategori B: 7.5% dari harga jual setelah diskon seller" 
+            },
+            shopee_c: { 
+                percentage: 5.75, 
+                fixed: 0, 
+                info: "Shopee Kategori C: 5.75% dari harga jual setelah diskon seller" 
+            },
+            shopee_d: { 
+                percentage: 4.25, 
+                fixed: 0, 
+                info: "Shopee Kategori D: 4.25% (Sebagian elektronik & perlengkapan rumah)" 
+            },
+            tokopedia_elektronik: { 
+                percentage: 8.0, 
+                fixed: 0, 
+                info: "Tokopedia Elektronik: 1-10% (efektif 8% setelah diskon 20% dari tarif penuh)" 
+            },
+            tokopedia_fashion: { 
+                percentage: 8.0, 
+                fixed: 0, 
+                info: "Tokopedia Fashion/FMCG/Gaya Hidup: 4.25-10% (efektif 8% setelah diskon 20%)" 
+            },
+            tokopedia_lain: { 
+                percentage: 8.0, 
+                fixed: 0, 
+                info: "Tokopedia Kategori Lain: 1-10% (efektif 8% setelah diskon 20%)" 
+            },
+            lazada_marketplace: { 
+                percentage: 6.0, 
+                fixed: 0, 
+                info: "Lazada Marketplace: 4.25-8% + biaya penanganan ~1.5% (rata-rata ~6%)" 
+            },
+            lazada_lazmall: { 
+                percentage: 7.5, 
+                fixed: 0, 
+                info: "LazMall: 4.32-10.32% + biaya penanganan ~1.5% (rata-rata ~7.5%)" 
+            },
+            tiktokshop_low: { 
+                percentage: 2.0, 
+                fixed: 2000, 
+                info: "TikTok Shop Kategori Rendah: ~2% + Rp2.000 per pesanan" 
+            },
+            tiktokshop_high: { 
+                percentage: 6.5, 
+                fixed: 2000, 
+                info: "TikTok Shop Kategori Tinggi: ~6.5% + Rp2.000 per pesanan" 
+            },
+            instagram: { 
+                percentage: 0, 
+                fixed: 0, 
+                info: "Penjualan langsung tanpa fee platform" 
+            }
+        };
+
+        document.getElementById('platform').addEventListener('change', function() {
+            const platform = this.value;
+            const customFeeGroup = document.getElementById('customFeeGroup');
+            const customFixedGroup = document.getElementById('customFixedGroup');
+            const platformInfoText = document.getElementById('platformInfoText');
+            
+            if (platform === 'custom') {
+                customFeeGroup.classList.remove('hidden');
+                customFixedGroup.classList.remove('hidden');
+                platformInfoText.textContent = 'Masukkan fee custom sesuai kebutuhan Anda';
+            } else {
+                customFeeGroup.classList.add('hidden');
+                customFixedGroup.classList.add('hidden');
+                if (platform && platformData[platform]) {
+                    platformInfoText.textContent = platformData[platform].info;
+                } else {
+                    platformInfoText.textContent = '';
+                }
+            }
+        });
+
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        function calculate() {
+            const modalPrice = parseFloat(document.getElementById('modalPrice').value) || 0;
+            const platform = document.getElementById('platform').value;
+            const profitMargin = parseFloat(document.getElementById('profitMargin').value) || 0;
+            const affiliateFee = parseFloat(document.getElementById('affiliateFee').value) || 0;
+            const optionalFee = parseFloat(document.getElementById('optionalFee').value) || 0;
+            
+            if (modalPrice <= 0) {
+                alert('🚨 Mohon masukkan harga modal yang valid!');
+                return;
+            }
+            
+            if (!platform) {
+                alert('🚨 Mohon pilih platform penjualan!');
+                return;
+            }
+            
+            let feePercentage = 0;
+            let feeFixed = 0;
+            
+            if (platform === 'custom') {
+                feePercentage = parseFloat(document.getElementById('customFee').value) || 0;
+                feeFixed = parseFloat(document.getElementById('customFixed').value) || 0;
+            } else if (platformData[platform]) {
+                feePercentage = platformData[platform].percentage;
+                feeFixed = platformData[platform].fixed;
+            }
+            
+            // Rumus: Harga Jual = (Modal + Biaya Tetap + Target Keuntungan) / (1 - (Fee Platform% + Affiliate% + Optional%))
+            const targetProfit = modalPrice * (profitMargin / 100);
+            const basePrice = modalPrice + feeFixed + targetProfit;
+            const totalPercentageFees = (feePercentage + affiliateFee + optionalFee) / 100;
+            const finalPrice = basePrice / (1 - totalPercentageFees);
+            
+            // Hitung masing-masing fee yang akan dipotong
+            const platformFee = (finalPrice * feePercentage / 100) + feeFixed;
+            const affiliateCost = finalPrice * affiliateFee / 100;
+            const optionalCost = finalPrice * optionalFee / 100;
+            
+            // Update hasil
+            document.getElementById('resultModal').textContent = formatRupiah(modalPrice);
+            document.getElementById('resultFee').textContent = formatRupiah(platformFee);
+            document.getElementById('resultAffiliate').textContent = formatRupiah(affiliateCost);
+            document.getElementById('resultOptional').textContent = formatRupiah(optionalCost);
+            document.getElementById('resultProfit').textContent = formatRupiah(targetProfit);
+            document.getElementById('resultFinal').textContent = formatRupiah(Math.ceil(finalPrice));
+            
+            // Tampilkan hasil dengan animasi
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Enter key support
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculate();
+            }
+        });
+
+        // Add input animations
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.classList.add('transform', 'scale-105');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.classList.remove('transform', 'scale-105');
+            });
+        });
+    </script>
+</body>
+</html>
